@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LMS Frontend</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Registration Page -->
+<div class="container" id="register-page">
+    <h1 class="title">Register</h1>
+    <form id="registerForm" class="form">
+      <label for="email">Email:</label>
+      <input type="email" id="register-email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="register-password" name="password" placeholder="Enter your password" required>
+
+      <label for="role">Role:</label>
+      <select id="role" name="role">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+      </select>
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+</div>
+
+  <!-- Login Page -->
+  <div class="container" id="login-page">
+    <h1 class="title">Learning Management System</h1>
+    <form id="loginForm" class="form">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
+
+  <!-- Admin Dashboard -->
+  <div class="dashboard hidden" id="admin-dashboard">
+    <h1>Admin Dashboard</h1>
+    <nav>
+      <button class="btn">Manage Users</button>
+      <button class="btn">Manage Courses</button>
+    </nav>
+  </div>
+
+  <!-- Teacher Dashboard -->
+  <div class="dashboard hidden" id="teacher-dashboard">
+    <h1>Teacher Dashboard</h1>
+    <nav>
+      <button class="btn">Create Assignment</button>
+      <button class="btn">View Submissions</button>
+    </nav>
+  </div>
+
+  <!-- Student Dashboard -->
+  <div class="dashboard hidden" id="student-dashboard">
+    <h1>Student Dashboard</h1>
+    <nav>
+      <button class="btn">View Courses</button>
+      <button class="btn">Submit Assignment</button>
+    </nav>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch("login.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                alert(`Welcome, ${data.role}!`);
+                document.getElementById("login-page").classList.add("hidden");
+                
+                if (data.role === "admin") {
+                    document.getElementById("admin-dashboard").classList.remove("hidden");
+                } else if (data.role === "teacher") {
+                    document.getElementById("teacher-dashboard").classList.remove("hidden");
+                } else if (data.role === "student") {
+                    document.getElementById("student-dashboard").classList.remove("hidden");
+                }
+            } else {
+                alert(data.message);
+            }
+        });
+    });
+    
+    document.getElementById("registerForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch("register.php", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            if (data.status === "success") {
+                document.getElementById("registerForm").reset();
+            }
+        });
+    });
+    </script>    
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+      text-align: center;
+      width: 400px;
+    }
+
+    .title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .form label {
+      display: block;
+      text-align: left;
+      margin: 20px 0 9px;
+    }
+
+    .form input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .btn {
+      background-color: #007BFF;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+	  
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .dashboard {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .dashboard.hidden {
+      display: none;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav button {
+      display: block;
+      margin: 10px auto;
+      width: 200px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</body>
+</html>

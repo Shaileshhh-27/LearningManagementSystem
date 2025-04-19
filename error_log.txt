@@ -1,0 +1,32 @@
+[19-Mar-2025 07:46:42 UTC] PHP Warning:  SQLite3::prepare(): Unable to prepare statement: 1, no such column: e.status in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 169
+[19-Mar-2025 07:46:42 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bindValue() on bool in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php:171
+Stack trace:
+#0 C:\xampp\htdocs\shailyyy2\dddd\generate_report.php(86): generateEnrollmentReport(Object(SQLite3), Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 171
+[19-Mar-2025 07:46:48 UTC] PHP Warning:  SQLite3::prepare(): Unable to prepare statement: 1, no such column: e.status in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 247
+[19-Mar-2025 07:46:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function execute() on bool in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php:252
+Stack trace:
+#0 C:\xampp\htdocs\shailyyy2\dddd\generate_report.php(89): generatePerformanceReport(Object(SQLite3), Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 252
+[19-Mar-2025 07:46:50 UTC] PHP Warning:  SQLite3::prepare(): Unable to prepare statement: 1, no such column: a.teacher_id in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 324
+[19-Mar-2025 07:46:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function bindValue() on bool in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php:330
+Stack trace:
+#0 C:\xampp\htdocs\shailyyy2\dddd\generate_report.php(92): generateTeacherReport(Object(SQLite3), Array)
+#1 {main}
+  thrown in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 330
+[19-Mar-2025 07:51:35 UTC] PHP Warning:  SQLite3::prepare(): Unable to prepare statement: 1, no such column: e.status in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 303
+[19-Mar-2025 07:53:05 UTC] PHP Warning:  SQLite3::prepare(): Unable to prepare statement: 1, no such column: e.status in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 505
+[19-Mar-2025 07:57:13 UTC] PHP Warning:  SQLite3::prepare(): Unable to prepare statement: 1, no such column: a.teacher_id in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 728
+[19-Mar-2025 08:14:12 UTC] PHP Warning:  SQLite3::prepare(): Unable to prepare statement: 1, near &quot;LEFT&quot;: syntax error in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 378
+[19-Mar-2025 08:23:09 UTC] PHP Warning:  SQLite3::prepare(): Unable to prepare statement: 1, no such function: ucfirst in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 581
+[19-Mar-2025 08:23:28 UTC] PHP Warning:  SQLite3::prepare(): Unable to prepare statement: 1, no such function: ucfirst in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 581
+[21-Mar-2025 06:21:23 UTC] PHP Warning:  SQLite3::query(): Unable to prepare statement: 1, no such column: e.created_at in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 203
+[21-Mar-2025 06:22:19 UTC] PHP Warning:  SQLite3::query(): Unable to prepare statement: 1, no such column: e.created_at in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 203
+[21-Mar-2025 06:22:29 UTC] PHP Warning:  SQLite3::query(): Unable to prepare statement: 1, no such column: a.status in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 243
+[21-Mar-2025 06:22:31 UTC] PHP Warning:  SQLite3::query(): Unable to prepare statement: 1, no such column: c.updated_at in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 285
+[21-Mar-2025 06:22:55 UTC] PHP Warning:  SQLite3::query(): Unable to prepare statement: 1, no such column: a.status in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 243
+[21-Mar-2025 06:23:41 UTC] PHP Warning:  SQLite3::query(): Unable to prepare statement: 1, no such column: a.status in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 245
+[21-Mar-2025 06:23:55 UTC] PHP Warning:  SQLite3::query(): Unable to prepare statement: 1, no such column: c.updated_at in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 287
+[21-Mar-2025 06:24:30 UTC] PHP Warning:  SQLite3::query(): Unable to prepare statement: 1, no such column: s.submitted in C:\xampp\htdocs\shailyyy2\dddd\generate_report.php on line 248
